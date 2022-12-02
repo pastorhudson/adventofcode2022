@@ -20,8 +20,8 @@ data = puzzle.input_data.split("\n")
 Template End
 """
 
+
 def get_all_combos():
-    from itertools import permutations
 
     # initialize lists
     list_1 = ["A", "B", "C"]
@@ -50,43 +50,56 @@ def run():
     for game in data:
         print(game[0], game[2])
         if game[2] == "X":
-            total += 1
+            total += 0
         elif game[2] == "Y":
-            total += 2
-        elif game[2] == "Z":
             total += 3
+        elif game[2] == "Z":
+            total += 6
+        print(total)
         match game:
-            case "A X":
-                total += 3
-                print("Draw Rock Rock")
-            case "A Z":
-                print("Lose Rock Scissors")
-            case "A Y":
-                print("Win Rock Paper")
-                total += 6
+            # X Lose
+            # Y Draw
+            # Z Win
 
-            case "B Y":
-                print("Draw Paper Paper")
+            # Rock
+            case "A X":  # Lose with scissors
+                print(f"3 - scissors")
                 total += 3
-            case "B Z":
-                print("Win Paper Scissors")
-                total += 6
-            case "B X":
-                print("Lose Paper Rock")
+            case "A Y":  # Draw with rock
+                print(f"1 - rock")
+                total += 1
+            case "A Z":  # Win with paper
+                print(f"2 - paper")
+                total += 2
 
-            case "C Y":
-                print("Lose Scissors Paper")
-
-            case "C X":
-                print("Win Scissors Rock")
-                total += 6
-            case "C Z":
-                print("Draw Scissors Scissors")
+            # Paper
+            case "B X":  # Lose with rock
+                print(f"1 - rock")
+                total += 1
+            case "B Z":  # Win with scissors
                 total += 3
+                print(f"3 - paper")
+
+            case "B Y":  # Draw with Paper
+                total += 2
+                print(f"2 - paper")
+
+            # Scissors
+            case "C X":  # Lose with paper
+                total += 2
+                print(f"2 - paper")
+
+            case "C Y":  # Draw with scissors
+                total += 3
+                print(f"3 - scissors")
+
+            case "C Z":  # Win with rock
+                total += 1
+                print(f"1 - rock")
+
     print(total)
     # submit(total)
 
 
 if __name__ == "__main__":
     run()
-
