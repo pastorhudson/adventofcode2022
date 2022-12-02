@@ -3,7 +3,7 @@ with open('day1.txt') as f:
     lines = f.read()
 
     for elf in lines.split("\n\n"):
-        int_enf = [float(i) for i in elf.split("\n")]
+        int_enf = [int(i) for i in elf.split("\n")]
         if sum(int_enf) > richest_elf:
             richest_elf = sum(int_enf)
 

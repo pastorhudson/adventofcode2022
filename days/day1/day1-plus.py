@@ -1,12 +1,10 @@
-
 with open('day1.txt') as f:
     richest_elf = 0
     second_elf = 0
     third_elf = 0
     lines = f.read()
-    print(lines)
     for elf in lines.split("\n\n"):
-        int_enf = [float(i) for i in elf.split("\n")]
+        int_enf = [int(i) for i in elf.split("\n")]
         # print(int_enf)
         if sum(int_enf) > richest_elf:
             third_elf = second_elf
