@@ -64,7 +64,7 @@ def run():
         2-4,6-8 # no overlap first_start < second start & first end is less than second end
         2-3,4-5 # no overlap first start < second start & first end is less than second end
         5-7,7-9 # yes overlap because second_end = first_start
-        2-8,3-7 # yes overlap second start is greater than first startr and less than second end
+        2-8,3-7 # yes overlap second start is greater than first start and less than second end
         6-6,4-6 # yes first start is greater than second start and less than second end
         2-6,4-8 # yes first start is less than second start
         """

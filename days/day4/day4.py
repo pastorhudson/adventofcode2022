@@ -22,44 +22,11 @@ data = puzzle.input_data.split("\n")
 Template End
 """
 
-
-def get_all_combos():
-    from itertools import permutations
-
-    # initialize lists
-    list_1 = ["A", "B", "C"]
-    list_2 = ["X", "Y", "Z"]
-
-    # create empty list to store the
-    # combinations
-    unique_combinations = []
-
-    # Getting all permutations of list_1
-    # with length of list_2
-    permut = itertools.permutations(list_1, len(list_2))
-
-    # zip() is called to pair each permutation
-    # and shorter list element into combination
-    for comb in permut:
-        zipped = zip(comb, list_2)
-        unique_combinations.append(list(zipped))
-
-    # printing unique_combination list
-    print(unique_combinations)
-
-
-def do_find_duplicates(x):
-    for key, val in Counter(x).items():
-        print(key, val)
-
-
 def run():
     total = 0
     for items in data:
         first_pair = items.split(",")[0].split("-")
         second_pair = items.split(",")[1].split("-")
-        # print(first_pair)
-        # print(second_pair)
         """
         2-4,6-8
         2-3,4-5
