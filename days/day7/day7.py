@@ -20,12 +20,9 @@ def run():
     file_tree = {tuple("/"): 0}
     is_listing = False
     current_dir = []
-    parent_dir = []
     for line in data.splitlines():
 
         if "cd " in line and ".." not in line:
-            # file_tree[line.split(" ")[2]] = {}
-            print(line.split(" ")[2])
             current_dir.append(line.split(" ")[2])
             file_tree[tuple(current_dir)] = 0
             is_listing = False
